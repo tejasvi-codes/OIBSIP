@@ -1,201 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tejasvi | Personal Portfolio</title>
+    <title>Temperature Converter</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
     <header>
-        <nav>
-            <div class="logo">Tejasvi</div>
-
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>🌡️ Temperature Converter</h1>
+        <p>Convert temperatures quickly and easily</p>
+        <button id="themeBtn">🌙 Dark Mode</button>
+        <button id="clearHistoryBtn">🗑️ Clear History</button>
     </header>
+    
 
+    <main>
 
-   <!-- HOME SECTION -->
-<section id="home" class="hero">
+        <div class="converter-card">
 
-    <div class="hero-content">
+            <h2>Temperature Converter</h2>
 
-        <p class="hello">👋 Hi, I'm</p>
+            <input
+                type="number"
+                id="temperature"
+                placeholder="Enter temperature"
+            >
 
-        <h1>Tejasvi</h1>
+            <div class="unit-row">
 
-        <h2>Diploma IT Student | Web Development Enthusiast</h2>
+                <select id="fromUnit">
+                    <option value="C">Celsius (°C)</option>
+                    <option value="F">Fahrenheit (°F)</option>
+                    <option value="K">Kelvin (K)</option>
+                </select>
 
-        <p class="intro">
-            I enjoy building websites, learning new technologies,
-            and turning creative ideas into useful projects.
-        </p>
+                <button id="swapBtn">⇄</button>
 
-        <div class="buttons">
-            <a href="#projects" class="btn">
-                📂 View My Projects
-            </a>
-
-            <a href="#contact" class="btn outline">
-                📩 Contact Me
-            </a>
-        </div>
-
-    </div>
-
-</section>
-
-    <!-- ABOUT -->
-    <section id="about">
-
-        <h2>About Me</h2>
-
-        <div class="about-card">
-
-            <p>
-                I am a Diploma IT student passionate about
-                technology and web development.
-            </p>
-
-            <p>
-                I enjoy learning programming languages,
-                creating websites and developing useful projects.
-            </p>
-
-            <p>
-                My goal is to improve my technical skills
-                and build innovative projects.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-    <section id="skills">
-
-        <h2>My Skills</h2>
-
-        <div class="skills-container">
-
-            <div class="skill">C</div>
-            <div class="skill">C++</div>
-            <div class="skill">Java</div>
-            <div class="skill">PHP</div>
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-    <section id="projects">
-
-        <h2>My Projects</h2>
-
-        <div class="project-container">
-
-            <!-- Project 1 -->
-            <div class="project-card">
-
-                <h3>Skill Connect</h3>
-
-                <p>
-                    A project designed to connect users
-                    with skills and opportunities.
-                </p>
-
-                <p class="tech">
-                    HTML • CSS • Java • PHP
-                </p>
-
-                <a href="#" class="project-btn">
-                    View Project
-                </a>
+                <select id="toUnit">
+                    <option value="F">Fahrenheit (°F)</option>
+                    <option value="C">Celsius (°C)</option>
+                    <option value="K">Kelvin (K)</option>
+                </select>
 
             </div>
 
+            <div class="buttons">
 
-            <!-- Project 2 -->
-            <div class="project-card">
+                <button id="convertBtn">
+                    Convert
+                </button>
 
-                <h3>Smart Utility Hub</h3>
-
-                <p>
-                    A web development project that brings
-                    useful everyday tools together in one place.
-                </p>
-
-                <p class="tech">
-                    HTML • CSS
-                </p>
-
-                <a href="#" class="project-btn">
-                    View Project
-                </a>
+                <button id="clearBtn">
+                    Clear
+                </button>
 
             </div>
 
+            <div id="result">
+                Result will appear here
+            </div>
+            <button id="copyBtn">📋 Copy Result</button>
+
+            <div id="status"></div>
+            
+
         </div>
 
-    </section>
+
+        <!-- Quick Temperature -->
+
+        <section class="quick-section">
+
+            <h2>⚡ Quick Temperatures</h2>
+
+            <div class="quick-buttons">
+
+                <button class="quick-btn" data-temp="0">
+                    0°C
+                </button>
+
+                <button class="quick-btn" data-temp="25">
+                    25°C
+                </button>
+
+                <button class="quick-btn" data-temp="37">
+                    37°C
+                </button>
+
+                <button class="quick-btn" data-temp="100">
+                    100°C
+                </button>
+
+            </div>
+
+        </section>
 
 
-    <!-- CONTACT -->
-    <section id="contact">
+        <!-- Recent Conversions -->
 
-        <h2>Contact Me</h2>
+        <section class="recent-section">
 
-        <div class="contact-card">
+            <h2>🕘 Recent Conversions</h2>
+
+            <div id="history">
+                <p>No conversions yet.</p>
+            </div>
+
+        </section>
+
+
+        <!-- How It Works -->
+
+        <section class="info-section">
+
+            <h2>💡 How It Works</h2>
 
             <p>
-                I'd love to connect with you!
+                Enter a temperature, choose the original unit
+                and select the unit you want to convert it into.
+                Then click the Convert button.
             </p>
 
-           <div class="social-links">
+        </section>
 
-    <a href="mailto:your-email@example.com">
-        📧 Email
-    </a>
-
-    <a href="https://www.linkedin.com/" target="_blank">
-        💼 LinkedIn
-    </a>
-
-    <a href="https://github.com/" target="_blank">
-        🐙 GitHub
-    </a>
-
-</div>
-        </div>
-
-    </section>
+    </main>
 
 
-    <!-- FOOTER -->
     <footer>
 
         <p>
-            © 2026 Tejasvi | Personal Portfolio
+            © 2026 Temperature Converter | Web Development Project
         </p>
 
     </footer>
 
-</body>
 
+    <script src="script.js"></script>
+
+</body>
 </html>
